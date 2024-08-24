@@ -24,3 +24,21 @@
     }
 }
 
+@mixin container{
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+@mixin grid($columns: 1, $gap: 3rem){
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: $gap;
+}
+
+@mixin listFormater{
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    color: inherit;
+}

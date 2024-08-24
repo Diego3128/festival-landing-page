@@ -5,9 +5,11 @@
     background-color: v.$black;
     
     .header-content{
+        display: flex;
+        flex-direction: column;
         padding: 2rem;
         @include m.tablet(){
-            display: flex;
+            flex-direction: row;
             justify-content: space-between;
             align-items: center;
             column-gap: 5rem;
@@ -27,20 +29,21 @@
 
 .main-navigation{
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     row-gap: 1.5rem;
     margin-top: 3rem;
 
     @include m.tablet(){
-        flex-direction: row;
         column-gap: 2.5rem;
         margin-top: 0;
     }
     a{
         color: v.$white;
-        font-size: 2.2rem;
+        font-size: 2rem;
         font-weight: bold;
+        border-bottom: 3px solid v.$pink;
+        padding-bottom: 5px;
 
         &:hover{
             color: v.$yellow;

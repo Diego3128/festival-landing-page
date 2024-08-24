@@ -377,11 +377,13 @@ body > section {
   background-color: #000000;
 }
 .header .header-content {
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
 }
 @media (min-width: 768px) {
   .header .header-content {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     column-gap: 5rem;
@@ -401,22 +403,23 @@ body > section {
 
 .main-navigation {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   row-gap: 1.5rem;
   margin-top: 3rem;
 }
 @media (min-width: 768px) {
   .main-navigation {
-    flex-direction: row;
     column-gap: 2.5rem;
     margin-top: 0;
   }
 }
 .main-navigation a {
   color: #e2e2e2;
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: bold;
+  border-bottom: 3px solid #F53756;
+  padding-bottom: 5px;
 }
 .main-navigation a:hover {
   color: #fdda00;
@@ -465,4 +468,103 @@ body > section {
   display: inline-block;
   padding: 2rem;
   font-weight: bolder;
+}
+
+.about-festival {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .about-festival {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+.about-festival .image {
+  margin-bottom: 3rem;
+  box-shadow: 5px 0px 10px 1px #F53756, -5px 0px 10px 1px #fdda00;
+  height: fit-content;
+}
+.about-festival .festival-content {
+  padding: 0 2rem;
+}
+@media (min-width: 768px) {
+  .about-festival .festival-content {
+    padding: 0;
+  }
+}
+.about-festival h2 {
+  margin-bottom: 2rem;
+  text-wrap: pretty;
+}
+.about-festival .date {
+  font-weight: bolder;
+  color: #4CB8B3;
+}
+
+.lineup {
+  background: #F53756;
+  color: #e2e2e2;
+}
+.lineup .day {
+  color: #e2e2e2;
+  text-align: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .scenarios-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+.scenario {
+  padding: 3rem 0 0 0;
+}
+.scenario .name-scenario {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 3rem;
+}
+
+.scenario:nth-child(odd) {
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.scenario:nth-child(even) {
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.calendar {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  color: inherit;
+  color: #000000;
+}
+.calendar li {
+  padding: 2.5rem 1rem 2.5rem;
+  font-weight: 700;
+}
+.calendar li span {
+  font-weight: 400;
+}
+
+.bg-yellow {
+  background-color: #fdda00;
+}
+.bg-yellow li:nth-child(odd) {
+  background: #ffdf18;
+}
+
+.bg-green {
+  background-color: #4CB8B3;
+}
+.bg-green li:nth-child(odd) {
+  background: #5ebfbb;
 }
