@@ -42,3 +42,12 @@
     margin: 0;
     color: inherit;
 }
+
+@mixin longButton($bg: inherit, $color: inherit, $verticalPd: 1rem, $horizontalPd: 1rem, $bdrad: 1rem  ){
+    display: block;
+    padding: $verticalPd $horizontalPd;
+    background-color: $bg;
+    color: $color;
+    border-radius: $bdrad;
+    text-align: center;
+}

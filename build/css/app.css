@@ -358,7 +358,7 @@ h2 {
 }
 
 h3 {
-  font-size: 5.5rem;
+  font-size: 4.5rem;
   text-align: center;
 }
 
@@ -568,3 +568,109 @@ body > section {
 .bg-green li:nth-child(odd) {
   background: #5ebfbb;
 }
+
+.tickets-container {
+  background: #4CB8B3;
+}
+.tickets-container h3, .tickets-container .pase-name, .tickets-container .pase-footer > p {
+  color: #e2e2e2;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.tickets {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .tickets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+.pase {
+  padding-bottom: 2rem;
+  transform: scale(0.9);
+  transition: transform 400ms ease-in-out;
+}
+.pase:hover {
+  transform: scale(0.92);
+}
+.pase-name {
+  margin: 0;
+  font-size: 3.5rem;
+  text-align: center;
+  background-color: #4CB8B3;
+  padding-bottom: 2rem;
+  text-transform: uppercase;
+}
+.pase-header, .pase-footer {
+  padding: 0.5rem;
+}
+.pase-header p, .pase-footer p {
+  text-align: center;
+  margin: 0;
+  color: #e2e2e2;
+}
+.pase-header {
+  margin: 0;
+  background-color: #F53756;
+}
+.pase-header p {
+  font-size: 2.5rem;
+  color: #e2e2e2;
+  margin: 0;
+  text-align: center;
+}
+.pase-header {
+  background-color: #F53756;
+}
+.pase-header p {
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  padding: 1rem 0;
+}
+.pase-body {
+  background-color: #e2e2e2;
+}
+.pase-body ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  color: inherit;
+}
+.pase-body li {
+  padding: 2rem;
+  border-bottom: 1px solid #cccccc;
+}
+.pase-footer {
+  background-color: #e2e2e2;
+  padding: 3rem;
+}
+.pase-footer p {
+  display: block;
+  padding: 1rem 1rem;
+  background-color: #752F97;
+  color: inherit;
+  border-radius: 1rem;
+  text-align: center;
+  font-size: 2.8rem;
+}
+.pase-footer p:hover {
+  cursor: pointer;
+  background-color: #572370;
+}
+
+.footer {
+  background-color: #F53756;
+}
+.footer p {
+  padding: 2rem;
+  margin: 0;
+  color: #e2e2e2;
+  text-align: center;
+  font-size: 2.2rem;
+}/*# sourceMappingURL=app.css.map */
