@@ -1,0 +1,24 @@
+{
+  "name": "music-festival",
+  "version": "1.0.0",
+  "description": "This is a landing page to promote an upcoming music festival in the city. Ihe project was created using fronted technologies.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "gulp dev"
+  },
+  "keywords": [
+    "SASS",
+    "NPM.",
+    "JAVASCRIPT",
+    "CSS",
+    "HTML"
+  ],
+  "author": "diego perez",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.77.8"
+  }
+}

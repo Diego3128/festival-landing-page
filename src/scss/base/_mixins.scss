@@ -1,0 +1,26 @@
+@use './variables' as v;
+
+@mixin phone($inital-point: v.$phone){
+    @media (min-width: $inital-point) {
+        @content;
+    }
+}
+
+@mixin tablet($inital-point: v.$tablet){
+    @media (min-width: $inital-point) {
+        @content;
+    }
+}
+
+@mixin desktop($inital-point: v.$desktop){
+    @media (min-width: $inital-point) {
+        @content;
+    }
+}
+
+@mixin desktopXl($inital-point: v.$desktopXl){
+    @media (min-width: $inital-point) {
+        @content;
+    }
+}
+

@@ -1,0 +1,5 @@
+@forward './_normalize';
+@forward './variables';
+@forward './globals';
+
+// compile all the stylesheet in '_index.scss' and charge them on 'app.scss'
