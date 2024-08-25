@@ -3,6 +3,7 @@
 
 .video{
     position: relative;
+    z-index: 10;
     min-height: 40rem;
     max-height: 60rem;
     overflow: hidden;

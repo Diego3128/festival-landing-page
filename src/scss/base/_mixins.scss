@@ -51,3 +51,13 @@
     border-radius: $bdrad;
     text-align: center;
 }
+
+@mixin fixedModal{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    background-color: transparentize(v.$black, 0.7);
+    z-index: 100;
+}

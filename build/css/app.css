@@ -427,6 +427,7 @@ body > section {
 
 .video {
   position: relative;
+  z-index: 10;
   min-height: 40rem;
   max-height: 60rem;
   overflow: hidden;
@@ -569,6 +570,105 @@ body > section {
   background: #5ebfbb;
 }
 
+.gallery {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+.gallery-images {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  color: inherit;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 3rem;
+}
+@media (min-width: 480px) {
+  .gallery-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .gallery-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+}
+@media (min-width: 1200px) {
+  .gallery-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+  }
+}
+.gallery-images img {
+  height: 20rem;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 200ms ease-in-out;
+}
+.gallery-images img:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.modal {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  flex-direction: column;
+  row-gap: 2rem;
+  padding: 1rem;
+  animation: fadeIn 300ms ease-in-out;
+}
+.modal.fade-out {
+  animation: fadeOut 300ms ease-in-out;
+}
+.modal img {
+  width: min(80%, 900px);
+}
+.modal .closeBtn {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  flex-basis: 3rem;
+  flex-grow: 0;
+  flex-shrink: 0;
+  border: none;
+  outline: none;
+  color: #000000;
+  background: #e2e2e2;
+  font-weight: bolder;
+  border: 1px #F53756 outset;
+}
+.modal .closeBtn:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(-100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes fadeOut {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
 .tickets-container {
   background: #4CB8B3;
 }

@@ -1,0 +1,83 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+
+.gallery{
+    @include m.container();
+    &-images{
+        @include m.listFormater();
+        @include m.grid();
+
+        @include m.phone{
+            @include m.grid(2, 2rem);
+        }
+        @include m.tablet{
+            @include m.grid(3, 3rem);
+        }
+        @include m.desktop{
+            @include m.grid(4, 4rem);
+        }
+
+        img{
+            height: 20rem;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 200ms ease-in-out;
+            &:hover{
+                cursor: pointer;
+                transform: scale(1.02);
+            }
+        }
+    }
+}
+
+.modal{
+    @include m.fixedModal();
+    flex-direction: column;
+    row-gap: 2rem;
+    padding: 1rem;
+    animation: fadeIn 300ms ease-in-out;
+    &.fade-out{
+    animation: fadeOut 300ms ease-in-out;
+    }
+    img{
+        width: min(80%, 900px);
+    }
+    .closeBtn{
+        border-radius: 50%;
+        aspect-ratio: 1;
+        flex-basis: 3rem;
+        flex-grow: 0;
+        flex-shrink: 0;
+        border: none;
+        outline: none;
+        color: v.$black;
+        background: v.$white;
+        font-weight: bolder;
+        border: 1px v.$pink outset;
+
+        &:hover{
+            cursor: pointer;
+            opacity: .7;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0%{
+        transform: translateY(-100vh);
+    }
+    100%{
+        transform: translateY(0);
+    }
+    
+}
+@keyframes fadeOut {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-100vh);
+    }
+    
+}
