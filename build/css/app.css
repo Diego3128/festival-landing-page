@@ -376,6 +376,17 @@ body > section {
 .header {
   background-color: #000000;
 }
+@media (min-width: 768px) {
+  .header.fixed {
+    position: fixed;
+    box-shadow: 1rem 0 1rem #cccccc;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 20;
+    animation: showNav 300ms ease-in-out;
+  }
+}
 .header .header-content {
   display: flex;
   flex-direction: column;
@@ -425,6 +436,14 @@ body > section {
   color: #fdda00;
 }
 
+@keyframes showNav {
+  0% {
+    transform: translateY(-20vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 .video {
   position: relative;
   z-index: 10;

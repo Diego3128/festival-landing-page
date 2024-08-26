@@ -1,6 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
+  fixedNavigation();
+
   createGallery();
 });
+
+function fixedNavigation() {
+  // when the about festival section is no longer in the viewport the header will be fixed
+  const aboutFestivalSection = document.querySelector(".about-festival");
+  const header = document.querySelector(".header");
+
+  document.addEventListener("scroll", () => {
+    const distanceFromTop = aboutFestivalSection.getBoundingClientRect().bottom;
+    if (distanceFromTop < 0) {
+      header.classList.add("fixed");
+    } else {
+      header.classList.remove("fixed");
+    }
+  });
+}
 
 function createGallery() {
   const ulGallery = document.querySelector(".gallery-images");
