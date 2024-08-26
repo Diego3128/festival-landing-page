@@ -2,8 +2,34 @@ document.addEventListener("DOMContentLoaded", function () {
   fixedNavigation();
 
   createGallery();
+
+  showActiveSection();
 });
 
+function showActiveSection() {
+  document.addEventListener("scroll", () => {
+    //get all section elements from the document
+    const sections = document.querySelectorAll("section");
+    //get all a elements inside the nav elements
+    const anchors = document.querySelectorAll(".main-navigation a");
+    // detect the current section
+    let current = "";
+    sections.forEach((section) => {
+      const distanceFromTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (window.scrollY >= (distanceFromTop - sectionHeight / 3)) {
+        current = section.id;
+      }
+    });
+
+    anchors.forEach(a =>{
+      a.classList.remove('active');
+      if(a.getAttribute('href') === `#${current}`){
+        a.classList.add('active');
+      }
+    })
+  });
+}
 function fixedNavigation() {
   // when the about festival section is no longer in the viewport the header will be fixed
   const aboutFestivalSection = document.querySelector(".about-festival");

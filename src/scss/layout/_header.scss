@@ -1,11 +1,12 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
 
-.header{
+.header {
     background-color: v.$black;
+
     // allow fixed navigation in big screens
-    &.fixed{
-        @include m.tablet{
+    &.fixed {
+        @include m.tablet {
             position: fixed;
             box-shadow: 1rem 0 1rem lighten(v.$black, 80%);
             width: 100%;
@@ -15,12 +16,13 @@
             animation: showNav 300ms ease-in-out;
         }
     }
-    
-    .header-content{
+
+    .header-content {
         display: flex;
         flex-direction: column;
         padding: 2rem;
-        @include m.tablet(){
+
+        @include m.tablet() {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
@@ -29,35 +31,38 @@
         }
     }
 
-    h1{
+    h1 {
         color: v.$white;
         margin-bottom: 0;
         text-align: center;
-        @include m.tablet(){
+
+        @include m.tablet() {
             text-align: left;
         }
     }
 }
 
-.main-navigation{
+.main-navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
     row-gap: 1.5rem;
     margin-top: 3rem;
 
-    @include m.tablet(){
+    @include m.tablet() {
         column-gap: 2.5rem;
         margin-top: 0;
     }
-    a{
+
+    a {
         color: v.$white;
         font-size: 2rem;
         font-weight: bold;
         border-bottom: 3px solid v.$pink;
         padding-bottom: 5px;
 
-        &:hover{
+        &:hover,
+        &.active {
             color: v.$yellow;
         }
     }
@@ -67,11 +72,12 @@
 
 
 @keyframes showNav {
-    0%{
+    0% {
         transform: translateY(-20vh);
     }
-    100%{
+
+    100% {
         transform: translateY(0);
     }
-    
+
 }

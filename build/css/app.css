@@ -432,7 +432,7 @@ body > section {
   border-bottom: 3px solid #F53756;
   padding-bottom: 5px;
 }
-.main-navigation a:hover {
+.main-navigation a:hover, .main-navigation a.active {
   color: #fdda00;
 }
 
