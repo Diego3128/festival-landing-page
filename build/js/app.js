@@ -11,10 +11,9 @@ function createGallery() {
     img.src = `src/img/gallery/full/${i}.jpg`;
     img.alt = "gallery picture";
     img.classList.add("gallery-img");
-    img.id = `gallery-img-${i}`;
+    img.setAttribute("data-id", i);
     ulGallery.appendChild(img);
   }
-  console.log(ulGallery);
 }
 
 function closeModal() {
@@ -28,11 +27,12 @@ function closeModal() {
 }
 function showImg(imgId) {
   //image's reference to show in the modal
-  const img = document.getElementById(imgId);
+  const img = document.createElement("IMG");
+  img.setAttribute("src", `src/img/gallery/full/${imgId}.jpg`);
+  img.setAttribute("alt", "gallery image");
   // create modal element
   const modal = document.createElement("DIV");
   modal.appendChild(img);
-  modal.onclick = closeModal;
   modal.classList.add("modal");
   //   close button
   const closeBtn = document.createElement("BUTTON");
@@ -42,14 +42,30 @@ function showImg(imgId) {
 
   //insert inside the body
   const body = document.body;
+  // dissable overflow
   body.style.overflowY = "hidden";
+  //insert at the beginning inside the body
   body.prepend(modal);
 }
 
 function clickEventHandler(e) {
   const target = e.target;
   if (target.classList.contains("gallery-img")) {
-    showImg(target.id);
+    // if the modal doesn't exist it'll be created
+    if (!document.querySelector(".modal")) {
+      id = target.dataset.id;
+      showImg(id);
+      return;
+    }
+  }
+
+  if (
+    target.classList.contains("modal") ||
+    target.classList.contains("closeBtn")
+  ) {
+    closeModal();
+    return;
   }
 }
-document.addEventListener("click", clickEventHandler);
+
+document.body.addEventListener("click", clickEventHandler);

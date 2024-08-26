@@ -17,7 +17,6 @@
         @include m.desktop{
             @include m.grid(4, 4rem);
         }
-
         img{
             height: 20rem;
             object-fit: cover;
