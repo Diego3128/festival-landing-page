@@ -67,6 +67,9 @@ function createGallery() {
 
   for (let i = 1; i <= IMAGES_NUM; i++) {
     const img = document.createElement("IMG");
+    img.setAttribute("loading", "lazy");
+    img.setAttribute("width", "300");
+    img.setAttribute("height", "200");
     img.src = `src/img/gallery/full/${i}.jpg`;
     img.alt = "gallery picture";
     img.classList.add("gallery-img");
