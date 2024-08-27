@@ -2,27 +2,32 @@
 @use '../base/mixins' as m;
 
 
-.gallery{
+.gallery {
     @include m.container();
-    &-images{
+
+    &-images {
         @include m.listFormater();
         @include m.grid();
 
-        @include m.phone{
+        @include m.phone {
             @include m.grid(2, 2rem);
         }
-        @include m.tablet{
+
+        @include m.tablet {
             @include m.grid(3, 3rem);
         }
-        @include m.desktop{
+
+        @include m.desktop {
             @include m.grid(4, 4rem);
         }
-        img{
+
+        img {
             height: 20rem;
             object-fit: cover;
             object-position: center;
             transition: transform 200ms ease-in-out;
-            &:hover{
+
+            &:hover {
                 cursor: pointer;
                 transform: scale(1.02);
             }
@@ -30,19 +35,23 @@
     }
 }
 
-.modal{
+.modal {
     @include m.fixedModal();
     flex-direction: column;
     row-gap: 2rem;
     padding: 1rem;
     animation: fadeIn 300ms ease-in-out;
-    &.fade-out{
-    animation: fadeOut 300ms ease-in-out;
+
+    &.fade-out {
+        animation: fadeOut 300ms ease-in-out;
     }
-    img{
+
+    img {
         width: min(80%, 900px);
+        margin: 0 auto;
     }
-    .closeBtn{
+
+    .closeBtn {
         border-radius: 50%;
         aspect-ratio: 1;
         flex-basis: 3rem;
@@ -55,7 +64,7 @@
         font-weight: bolder;
         border: 1px v.$pink outset;
 
-        &:hover{
+        &:hover {
             cursor: pointer;
             opacity: .7;
         }
@@ -63,20 +72,23 @@
 }
 
 @keyframes fadeIn {
-    0%{
+    0% {
         transform: translateY(-100vh);
     }
-    100%{
+
+    100% {
         transform: translateY(0);
     }
-    
+
 }
+
 @keyframes fadeOut {
-    0%{
+    0% {
         transform: translateY(0);
     }
-    100%{
+
+    100% {
         transform: translateY(-100vh);
     }
-    
+
 }

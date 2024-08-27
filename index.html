@@ -45,9 +45,12 @@
     </div>
 
     <section class="about-festival">
-      <div class="image">
-        <img loading="lazy" width="300" height="200" src="./src/img/imagen_dj.jpg" alt="about the festival" />
-      </div>
+      <picture class="image">
+        <source loading="lazy"  srcset="./build/img/imagen_dj.avif" alt="about the festival" type="image/avif">
+        <source loading="lazy"  srcset="./build/img/imagen_dj.webp" alt="about the festival" type="image/webp">
+
+        <img loading="lazy" width="300" height="200" src="./build/img/imagen_dj.jpg" alt="about the festival">
+      </picture>
       <div class="festival-content">
         <h2>Techno and EDM Festival</h2>
         <p class="date">July 20th, 2025, CDMX</p>

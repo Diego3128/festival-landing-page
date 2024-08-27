@@ -66,15 +66,16 @@ function createGallery() {
   const IMAGES_NUM = 16;
 
   for (let i = 1; i <= IMAGES_NUM; i++) {
-    const img = document.createElement("IMG");
-    img.setAttribute("loading", "lazy");
-    img.setAttribute("width", "300");
-    img.setAttribute("height", "200");
-    img.src = `src/img/gallery/full/${i}.jpg`;
-    img.alt = "gallery picture";
-    img.classList.add("gallery-img");
-    img.setAttribute("data-id", i);
-    ulGallery.appendChild(img);
+    let picture = document.createElement('PICTURE');
+
+    picture.innerHTML =`
+        <source loading="lazy"  srcset="./build/img/gallery/thumb/${i}.avif" type="image/avif">
+        <source loading="lazy"  srcset="./build/img/gallery/thumb/${i}.webp" type="image/webp">
+
+        <img loading="lazy" width="300" height="200" src="./build/img/gallery/thumb/${i}.jpg" alt="gallery picture" data-id="${i}" class="gallery-img">
+    `;
+
+    ulGallery.appendChild(picture);
   }
 }
 
@@ -89,12 +90,18 @@ function closeModal() {
 }
 function showImg(imgId) {
   //image's reference to show in the modal
-  const img = document.createElement("IMG");
-  img.setAttribute("src", `src/img/gallery/full/${imgId}.jpg`);
-  img.setAttribute("alt", "gallery image");
+  let picture = document.createElement('PICTURE');
+
+  picture.innerHTML =`
+  <source   srcset="./build/img/gallery/full/${imgId}.avif" type="image/avif">
+  <source   srcset="./build/img/gallery/full/${imgId}.webp" type="image/webp">
+
+  <img  src="./build/img/gallery/full/${imgId}.jpg" alt="gallery image">
+`;
+
   // create modal element
   const modal = document.createElement("DIV");
-  modal.appendChild(img);
+  modal.appendChild(picture);
   modal.classList.add("modal");
   //   close button
   const closeBtn = document.createElement("BUTTON");
