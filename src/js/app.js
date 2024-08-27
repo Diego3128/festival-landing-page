@@ -98,7 +98,6 @@ function showImg(imgId) {
 
   <img  src="./build/img/gallery/full/${imgId}.jpg" alt="gallery image">
 `;
-
   // create modal element
   const modal = document.createElement("DIV");
   modal.appendChild(picture);
