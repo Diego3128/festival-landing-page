@@ -4,8 +4,24 @@ document.addEventListener("DOMContentLoaded", function () {
   createGallery();
 
   showActiveSection();
+
+  anchorNNavigation();
 });
 
+function anchorNNavigation(){
+  const navigation = document.querySelector('.main-navigation');
+  navigation.addEventListener('click', e=>{
+    e.preventDefault();
+    const target = e.target;
+    let link = undefined;
+    let section = null;
+    if(target.classList.contains('nav-link')){
+      link = target.getAttribute('href');
+      section = document.querySelector(link);
+      section.scrollIntoView({behavior: 'smooth'});
+    }
+  })
+};
 function showActiveSection() {
   document.addEventListener("scroll", () => {
     //get all section elements from the document
